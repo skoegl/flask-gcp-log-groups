@@ -32,7 +32,7 @@ class GCPHandler(logging.Handler):
             resource = _GLOBAL_RESOURCE
         else:
             resource = Resource(type=resource['type'], labels=resource['labels'])
-            print str( resource)
+            print(repr(resource))
         self.resource = resource
         self.transport_parent = BackgroundThreadTransport(client, parentLogName)
         self.transport_child = BackgroundThreadTransport(client, childLogName)           
